@@ -1,0 +1,35 @@
+{
+    "id": "2",
+    "title": "Have you tried the Blinkist app?",
+    "content": "Blinkist is an app that gives you the key ideas from a bestselling nonfiction book in just 15 minutes. Whether you’re into psychology, finance, or anything in between, Blinkist has something for you.",
+    "slug": "have-you-tried-the-blinkist-app",
+    "category": {
+        "name": "Productivity",
+        "slug": "productivity"
+    },
+    "heroImage": {
+        "src": "https://yesimolinadev.s3.us-east-1.amazonaws.com/hero2.jpg",
+        "alt": "Person using the Blinkist app"
+    },
+    "published": "2019-05-01T00:00:00.000Z",
+    "callToAction": {
+        "title": {
+            "id": "aUG6YJBjDym299a",
+            "name": "Longer content test",
+            "description": "This is a cta test",
+            "control": "Sign Up",
+            "variation": "Download the app"
+        },
+        "content": "What are you waiting for? "
+    },
+    "tags": [
+        {
+            "name": "Blinkist",
+            "slug": "blinkist"
+        },
+        {
+            "name": "App",
+            "slug": "app"
+        }
+    ]
+}

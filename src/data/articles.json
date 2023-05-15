@@ -1,0 +1,72 @@
+{
+    "articles": [
+        {
+            "id": "1",
+            "title": "Check out the Blinkist app",
+            "content": "Meet the app that revolutionized reading.",
+            "slug": "check-out-the-blinkist-app",
+            "author": {
+                "name": "Jane Doe",
+                "email": "jane@test.fake",
+                "avatar": "jane.jpg"
+            },
+            "category": {
+                "name": "Productivity",
+                "slug": "productivity"
+            },
+            "heroImage": {
+                "url": "hero1.jpg",
+                "alt": "Hero image"
+            },
+            "published": "2019-05-01T00:00:00.000Z",
+            "callToAction": {
+                "title": "Sign Up",
+                "content": "Thanks a lot for reading the article!"
+            },
+            "tags": [
+                {
+                    "name": "Blinkist",
+                    "slug": "blinkist"
+                },
+                {
+                    "name": "App",
+                    "slug": "app"
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "title": "Have you tried the Blinkist app?",
+            "content": "Blinkist is an app that gives you the key ideas from a bestselling nonfiction book in just 15 minutes. Whether you’re into psychology, finance, or anything in between, Blinkist has something for you.",
+            "slug": "have-you-tried-the-blinkist-app",
+            "author": {
+                "name": "John Doe",
+                "email": "john@test.fake",
+                "avatar": "john.jpg"
+            },
+            "category": {
+                "name": "Productivity",
+                "slug": "productivity"
+            },
+            "heroImage": {
+                "url": "hero2.jpg",
+                "alt": "Person using the Blinkist app"
+            },
+            "published": "2019-05-01T00:00:00.000Z",
+            "callToAction": {
+                "title": "Sign Up",
+                "content": "And that’s not all! You can also listen to the key ideas from a book in just 15 minutes with Blinkist’s audio feature. With over 3,000 titles in 27 categories, you’re sure to find something that sparks your interest."
+            },
+            "tags": [
+                {
+                    "name": "Blinkist",
+                    "slug": "blinkist"
+                },
+                {
+                    "name": "App",
+                    "slug": "app"
+                }
+            ]
+        }
+    ]
+}
