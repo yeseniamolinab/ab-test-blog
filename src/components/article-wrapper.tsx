@@ -14,7 +14,7 @@ export function ArticleWrapper({ children, title }: { children: React.ReactNode,
         return () => {
             isMounted = false;
         }
-    }, [pageView]);
+    }, [pageView, title]);
     return (
         <>
             {children}

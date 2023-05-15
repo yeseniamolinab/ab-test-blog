@@ -15,7 +15,7 @@ export function ButtonWrapper({ children, event }: { children: React.ReactNode, 
         return () => {
             isMounted = false;
         }
-    }, [tracked]);
+    }, [tracked, event]);
     return (
         <>
             <Button className="w-full" onClick={() => trackEvent({ ...event, url: window.location.href })}>

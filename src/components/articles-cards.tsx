@@ -16,7 +16,7 @@ export function ArticlesCards() {
             <Card>
                 <CardHeader>
                     <CardTitle>Check out the Blinkist app</CardTitle>
-                    <CardDescription>Don't miss your chance to try it today!</CardDescription>
+                    <CardDescription>Don&apos;t miss your chance to try it today!</CardDescription>
                 </CardHeader>
                 <CardContent>
                     Article 1: This is the article content preview!
@@ -28,7 +28,7 @@ export function ArticlesCards() {
             <Card>
                 <CardHeader>
                     <CardTitle>Have you tried the Blinkist app?</CardTitle>
-                    <CardDescription>Don't miss your chance to try it today!</CardDescription>
+                    <CardDescription>Don&apos;t miss your chance to try it today!</CardDescription>
                 </CardHeader>
                 <CardContent>
                     Article 2: This is the article content preview!
