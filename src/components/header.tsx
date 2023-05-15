@@ -1,13 +1,10 @@
-'use client'
-
 import Link from "next/link";
 import { site } from "@/config/site";
-import { buttonVariants } from "@/components/ui/button"
-import { cn } from "@/lib/utils";
 import { Icons } from "@/components/icons"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { Nav } from "./nav";
 import { MobileNav } from "./mobile-nav";
+import { GhostButton } from "./ui/ghost-button";
 
 export function Header() {
   return (
@@ -23,18 +20,10 @@ export function Header() {
             target="_blank"
             rel="noreferrer"
           >
-            <div
-              className={cn(
-                buttonVariants({
-                  size: "sm",
-                  variant: "ghost",
-                }),
-                "w-9 px-0"
-              )}
-            >
+            <GhostButton>
               <Icons.gitHub className="h-5 w-5" />
               <span className="sr-only">GitHub</span>
-            </div>
+            </GhostButton>
           </Link>
         </nav>
       </section>

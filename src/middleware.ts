@@ -44,6 +44,7 @@ export async function middleware(request: NextRequest) {
     })
     return res;
   }
+  return res;
 }
 
 // Only running the middleware on the articles pages

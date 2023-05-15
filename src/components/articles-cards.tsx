@@ -34,7 +34,7 @@ export function ArticlesCards() {
                     Article 2: This is the article content preview!
                 </CardContent>
                 <CardFooter>
-                    <Link className={buttonVariants({ variant: "outline" })} href="/articles/check-out-the-blinkist-app">Read</Link>
+                    <Link className={buttonVariants({ variant: "outline" })} href="/articles/have-you-tried-the-blinkist-app">Read</Link>
                 </CardFooter>
             </Card>
         </section>
