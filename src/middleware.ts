@@ -1,6 +1,5 @@
 import { getRunningExperiments } from '@/lib/ab-test-client';
-import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { VISITOR_EXPERIMENTS_COOKIE } from '@/lib/utils';
 
 function assingVariant(experiment: Experiment) {
@@ -13,13 +12,13 @@ function assingVariant(experiment: Experiment) {
   return variant;
 }
 
-export async function middleware(request: NextRequest) {
+export function middleware(request: NextRequest) {
   const segments = request.nextUrl.pathname.split('/');
   let res: NextResponse = NextResponse.next()
   let visitorCookie = request.cookies.get(VISITOR_EXPERIMENTS_COOKIE)
   const visitorCurrentExperiments = visitorCookie?.value.split('!') || []
 
-  const experiments = await getRunningExperiments(segments[segments.length - 1])
+  const experiments = getRunningExperiments(segments[segments.length - 1])
 
   if (!visitorCookie) {
     let newVisitorExp: string[] = [];
@@ -30,7 +29,8 @@ export async function middleware(request: NextRequest) {
       newVisitorExp.push(`${experiment.id}.${variant?.id}`);
     })
 
-    res.cookies.set(VISITOR_EXPERIMENTS_COOKIE, newVisitorExp.join('!'))
+    res.cookies.delete(VISITOR_EXPERIMENTS_COOKIE)
+    res.cookies.set(VISITOR_EXPERIMENTS_COOKIE, newVisitorExp.join('!'), { path: '/' })
   } else if (visitorCurrentExperiments.length !== experiments.length) {
     let newExperiments: string[] = [];
 
@@ -40,9 +40,9 @@ export async function middleware(request: NextRequest) {
 
         newExperiments.push(`${experiment.id}.${variant?.id}`);
       }
+      res.cookies.delete(VISITOR_EXPERIMENTS_COOKIE)
       res.cookies.set(VISITOR_EXPERIMENTS_COOKIE, `${visitorCookie?.value}!${newExperiments.join('!')}`)
     })
-    return res;
   }
   return res;
 }

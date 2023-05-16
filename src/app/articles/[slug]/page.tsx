@@ -1,5 +1,5 @@
 import fsPromises from 'fs/promises';
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import { cookies } from 'next/headers';
 import path from 'path'
 import { VISITOR_EXPERIMENTS_COOKIE } from '@/lib/utils';
@@ -87,6 +87,10 @@ export default async function Page({ params }: { params: { slug: string } }) {
       variant: variantId
     }
   });
+
+  if (experiments.length === 0) {
+    redirect(`/articles/${slug}`);
+  }
 
   return (
     <div>

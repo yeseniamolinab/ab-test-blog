@@ -12,7 +12,7 @@ import Link from "next/link"
 
 export function ArticlesCards() {
     return (
-        <section className="flex flex-col items-center justify-center space-y-4 p-24">
+        <section className="flex flex-col items-center justify-center space-y-4 p-4">
             <Card>
                 <CardHeader>
                     <CardTitle>Check out the Blinkist app</CardTitle>

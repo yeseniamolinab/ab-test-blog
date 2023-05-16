@@ -92,4 +92,4 @@ Any merges into the default branch will run linter and build and deploy the chan
 
 ## 📝 Documentation <a name = "docs"></a>
 
-- To be added
+- See my [notion note](https://mud-lantana-33b.notion.site/Blinkist-Software-Engineer-Web-Coding-Challenge-b44b64b501e1440f994942970d16ef03) for information about the proposed solution

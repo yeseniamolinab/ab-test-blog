@@ -1,8 +1,7 @@
 import { experiments } from "@/data/experiments"
 
 // In real life, this would be an API call(REST, GraphQL, etc.)
-export async function getRunningExperiments(slug: string): Promise<Experiment[]> {
-    console.log('getRunningExperiments', experiments, slug);
+export function getRunningExperiments(slug: string): Experiment[] {
     const allExperiments: Experiment[] = experiments
 
     return allExperiments.filter((experiment) => {

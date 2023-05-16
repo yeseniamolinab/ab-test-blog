@@ -31,18 +31,18 @@ export function CallToAction({ callToAction, experiments }: { callToAction: Call
             {titleHasExperiment
                 ? <>
                     <Variant id={'0'} userExperimentConfig={titleExperiment}>
-                        <ButtonWrapper event={{ name: 'SignUpClick', variationName: 'control', url: '' }}>
+                        <ButtonWrapper event={{ name: 'sign_up_click', variationName: 'control', url: '' }}>
                             {callToAction.getCallToActionTitle('0')}
                         </ButtonWrapper>
                     </Variant>
                     <Variant id={'1'} userExperimentConfig={titleExperiment}>
-                        <ButtonWrapper event={{ name: 'SignUpClick', variationName: 'variation 1', url: '' }}>
+                        <ButtonWrapper event={{ name: 'sign_up_click', variationName: 'variation 1', url: '' }}>
                             {callToAction.getCallToActionTitle('1')}
                         </ButtonWrapper>
                     </Variant>
                 </>
                 : <>
-                    <ButtonWrapper event={{ name: 'SignUpClick', variationName: 'variation 1', url: '' }}>
+                    <ButtonWrapper event={{ name: 'sign_up_click', variationName: 'control', url: '' }}>
                         {callToAction.getCallToActionTitle()}
                     </ButtonWrapper>
                 </>
