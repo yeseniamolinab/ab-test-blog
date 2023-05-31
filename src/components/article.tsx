@@ -7,6 +7,7 @@ import { ArticleWrapper } from './article-wrapper';
 interface ArticleAnExperiments {
     article: Article;
     experiments: UserExperiment[];
+    userId: string;
 }
 
 function Content({ content }: { content: string }) {
@@ -21,7 +22,7 @@ function Title({ title }: { title: string }) {
     )
 }
 
-export function Article({ article, experiments }: ArticleAnExperiments) {
+export function Article({ article, experiments, userId }: ArticleAnExperiments) {
     const { title, content, heroImage, callToAction } = article;
     const { hasExperiment: titleHasExperiment, experiment: titleExperiment } = getExperimentConfig({ articleProperty: title, experiments });
     const { hasExperiment: contentHasExperiment, experiment: contentExperiment } = getExperimentConfig({ articleProperty: content, experiments });
@@ -65,7 +66,7 @@ export function Article({ article, experiments }: ArticleAnExperiments) {
                     </>
                     : <Content content={article.getContent()} />
                 }
-                <CallToAction callToAction={callToAction} experiments={experiments} />
+                <CallToAction callToAction={callToAction} experiments={experiments} userId={userId} />
             </article>
         </ArticleWrapper>
     )

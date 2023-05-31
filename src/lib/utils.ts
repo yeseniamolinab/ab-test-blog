@@ -6,6 +6,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const VISITOR_EXPERIMENTS_COOKIE = "web_exp";
+export const VISITOR_ID = "visitor_id";
 
 const hasExperiment = ({ articleProperty, experiments }: { articleProperty: string | AbTest, experiments: UserExperiment[] }) => {
     return typeof articleProperty !== 'string' && experiments.find((experiment) => experiment.id === (articleProperty as AbTest).id) !== undefined;

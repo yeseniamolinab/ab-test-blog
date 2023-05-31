@@ -15,5 +15,6 @@ export const trackPageview = (pageView: PageView): void => {
 
 
 export const trackEvent = (event: AnalyticsEvent): void => {
-    console.log(`--> Tracking Event: name ${event.name} | url: ${event.url}`);
+    const { name, url, userId } = event
+    console.log(`--> Tracking Event: name ${name} | url: ${url} | userId: ${userId}`);
 };

@@ -3,7 +3,7 @@ import { Variant } from "./variant";
 import { ButtonWrapper } from "./ui/button-wrapper";
 
 
-export function CallToAction({ callToAction, experiments }: { callToAction: CallToAction, experiments: UserExperiment[] }) {
+export function CallToAction({ callToAction, experiments, userId }: { callToAction: CallToAction, experiments: UserExperiment[], userId: string }) {
     const { title, content } = callToAction;
     const { hasExperiment: titleHasExperiment, experiment: titleExperiment } = getExperimentConfig({ articleProperty: title, experiments });
     const { hasExperiment: contentHasExperiment, experiment: contentExperiment } = getExperimentConfig({ articleProperty: content, experiments });
@@ -31,18 +31,18 @@ export function CallToAction({ callToAction, experiments }: { callToAction: Call
             {titleHasExperiment
                 ? <>
                     <Variant id={'0'} userExperimentConfig={titleExperiment}>
-                        <ButtonWrapper event={{ name: 'sign_up_click', variationName: 'control', url: '' }}>
+                        <ButtonWrapper event={{ name: 'sign_up_click', variationName: 'control', url: '', userId }}>
                             {callToAction.getCallToActionTitle('0')}
                         </ButtonWrapper>
                     </Variant>
                     <Variant id={'1'} userExperimentConfig={titleExperiment}>
-                        <ButtonWrapper event={{ name: 'sign_up_click', variationName: 'variation 1', url: '' }}>
+                        <ButtonWrapper event={{ name: 'sign_up_click', variationName: 'variation 1', url: '', userId }}>
                             {callToAction.getCallToActionTitle('1')}
                         </ButtonWrapper>
                     </Variant>
                 </>
                 : <>
-                    <ButtonWrapper event={{ name: 'sign_up_click', variationName: 'control', url: '' }}>
+                    <ButtonWrapper event={{ name: 'sign_up_click', variationName: 'control', url: '', userId }}>
                         {callToAction.getCallToActionTitle()}
                     </ButtonWrapper>
                 </>

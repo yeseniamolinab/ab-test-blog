@@ -2,7 +2,7 @@ import fsPromises from 'fs/promises';
 import { notFound, redirect } from 'next/navigation';
 import { cookies } from 'next/headers';
 import path from 'path'
-import { VISITOR_EXPERIMENTS_COOKIE } from '@/lib/utils';
+import { VISITOR_EXPERIMENTS_COOKIE, VISITOR_ID } from '@/lib/utils';
 import { Article } from '@/components/article'
 
 async function readFile(fileName: string): Promise<string> {
@@ -25,6 +25,12 @@ function getRunningExperiments() {
   } else {
     return [];
   }
+}
+
+function getUserId() {
+  const allCookies = cookies();
+  const userIdCookie = allCookies.get(VISITOR_ID);
+  return userIdCookie ? userIdCookie.value : '';
 }
 
 export default async function Page({ params }: { params: { slug: string } }) {
@@ -88,13 +94,15 @@ export default async function Page({ params }: { params: { slug: string } }) {
     }
   });
 
+  const userId = getUserId();
+
   if (experiments.length === 0) {
     redirect(`/articles/${slug}`);
   }
 
   return (
     <div>
-      <Article article={data} experiments={experiments} />
+      <Article article={data} experiments={experiments} userId={userId} />
     </div>
   );
 }

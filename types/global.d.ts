@@ -59,6 +59,7 @@ declare global {
         url: string;
         name: string;
         variationName: string;
+        userId: string;
     }
 
     interface PageView {
